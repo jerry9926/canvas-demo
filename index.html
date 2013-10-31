@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas demo</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<canvas id="canvas" width="300" height="300" class="canvas">
+	your browser do not support canvas
+	</canvas>
+	<script src="js/Demo.js"></script>
+	<script>
+		var canvas = document.getElementById('canvas'),
+		demo = new Demo(canvas);
+		demo.fillRect();
+	</script>
+</body>
+</html>

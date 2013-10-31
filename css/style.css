@@ -1,0 +1,233 @@
+/**************************************/
+/*                Reset               */
+/**************************************/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+a, abbr, address, cite,
+em, img,
+small, strong, sub, sup,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	-webkit-text-size-adjust: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+a {
+	color: #3B384C;
+	cursor: pointer;
+}
+:focus {
+	outline: 0;
+}
+ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th {font-weight: bold;}
+
+/**************************************/
+/*                Print               */
+/**************************************/
+body {
+	font: 12px/1.5 Tahoma, Arial, simsun, sans-serif;
+	color: #555;
+}
+a:link, a:visited, a:hover , a:active{
+	text-decoration: none;
+}
+h1 {font-size:18px;}
+h2 {font-size:16px;}
+h3 {font-size:14px;}
+h1,h2,h3,h4,h5,h6,strong {font-weight:bold;}
+
+
+/**************************************/
+/*              Meta Class            */
+/**************************************/
+
+/* location
+----------------------------------- */
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.tj{text-align:justify;}
+.ul{text-decoration:underline;}
+.line-through { text-decoration: line-through; }
+.bc{margin-left:auto;margin-right:auto;}
+.fl{float:left;_display:inline;}
+.fr{float:right;_display:inline;}
+.cb{clear:both;}
+.cl{clear:left;}
+.cr{clear:right;}
+.vt{vertical-align:top;}
+.vm{vertical-align:middle;}
+.vb{vertical-align:bottom;}
+.pr, .loadWrap{position:relative;}
+.pa{position:absolute;}
+.of{overflow:hidden;}
+.none{display:none;}
+.show,.block{display:block;}
+.ib{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+.cp{cursor:pointer;}
+
+/* margin
+----------------------------------- */
+.m0{margin:0;}
+.m5{margin:5px;}
+.m10{margin:10px;}
+.m15{margin:15px;}
+
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+
+.mb5{margin-bottom:5px;}
+.mb10{margin-bottom:10px;}
+.mb15{margin-bottom:15px;}
+
+.ml5{margin-left:5px;}
+.ml10{margin-left:10px;}
+.ml15{margin-left:15px;}
+
+.mr5{margin-right:5px;}
+.mr10{margin-right:10px;}
+.mr15{margin-right:15px;}
+
+/* padding
+----------------------------------- */
+.p0{padding:0;}
+.p5{padding:5px;}
+.p10{padding:10px;}
+.p15{padding:15px;}
+
+.pt5{padding-top:5px;}
+.pt10{padding-top:10px;}
+.pt15{padding-top:15px;}
+
+.pb5{padding-bottom:5px;}
+.pb10{padding-bottom:10px;}
+.pb15{padding-bottom:15px;}
+
+.pl5{padding-left:5px;}
+.pl10{padding-left:10px;}
+.pl15{padding-left:15px;}
+
+.pr5{padding-right:5px;}
+.pr10{padding-right:10px;}
+.pr15{padding-right:15px;}
+
+/**************************************/
+/*            Common config           */
+/**************************************/
+.clearfix:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+.clearfix {
+	*zoom:1;
+}
+/* 注意宽度设置。注意换行/不换行属性会继承，所以不要在较大的容器上使用此类 */
+.nowrap {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+/* FF不支持break-all，请根据需要设置overflow:auto;或者overflow:hidden; */
+.wrap {
+	width: 100%;
+	word-break: break-all;
+	overflow: hidden;
+}
+
+/* @module name	: .center_ib, .center_pa
+ * @author		: Alan Ouyang
+ * @description : 未知宽度单个或多个子元素水平居中
+ * @type		: base
+ * @embed		: 不可嵌套
+ * -------------------------------------------------*/
+/* 方法1 - .center_ib 用 inline-block */
+.center_ib {
+    display: block;
+	text-align: center;
+    /* 解决间隙问题 */
+    font-size: 0;
+}
+.center_ib .centered {
+    display: inline-block;
+	/* 解决不能水平对齐问题 */
+	vertical-align: top;
+	/* 解决间隙问题后遗症解决 */
+	font-size: 12px;
+	*display: inline;
+	*zoom: 1;
+}
+/* 让 chrome 支持 12px 以下的字体 */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .center_ib {
+		-webkit-text-size-adjust: none;
+		font-size: 1px;
+	}
+}
+
+/* 方法2 - .center_pa 用 position: relative */
+.center_pa {
+	float: left;
+	left: 50%;
+	position: relative;
+}
+.center_pa .centered {
+	float: left;
+	right: 50%;
+	position: relative;
+}
+/* @module name	: .vertical
+ * @author		: Alan Ouyang
+ * @description : 未知高度元素垂直居中
+ * @type		: base
+ * @embed		: 不可嵌套
+ * -------------------------------------------------*/
+.vertical {
+    display: table;
+    *position: relative;
+}
+.vertical .hack {
+    display: table-cell;
+	vertical-align: middle;
+    *position: absolute;
+	*top: 50%;
+}
+.vertical .centered {
+    *position: relative;
+	*top: -50%;
+}
+/**************************************/
+/*            User style              */
+/**************************************/
+.canvas{
+	border: 10px #ccc solid;
+}
