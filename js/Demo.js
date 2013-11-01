@@ -1,7 +1,45 @@
 function Demo(canvas){
 	this.content = canvas.getContext('2d');
 }
-
+/*
+*	lineWidth
+*	lineJoin
+*	strokeStyle
+*	lineCap
+*	fillStyle
+*	shadowColor
+*	shadowOffsetX
+*	shadowOffsetY
+*	shadowBlur
+*	------------------
+*	beginPath
+*	moveTo
+*	lineTo
+*	stroke
+*	translate
+*	save
+*	restore
+*	fill
+*	fillRect
+*	strokeRect
+*	clearRect
+*	quadraticCurreTo
+*	drawImage
+*	addColorStop
+*	createLinearGradient
+*	createRadialGradient
+*	createPattern
+*	scale
+*	rotate
+*	transform
+*	fillText
+*	strokeText
+*	getImageData
+*	putImageData
+*	createImageData
+*	closePath
+*
+*/
 Demo.prototype = {
 	line: function(){
 		/*
@@ -57,6 +95,19 @@ Demo.prototype = {
 		// content.stroke();
 	},
 
+	quadraticCurreTo: function(){
+		/*
+		* moveTo
+		* quadraticCurveTo
+		*/
+		var content = this.content;
+
+		content.beginPath();
+		content.moveTo(20,20);
+		content.quadraticCurveTo(20,100,200,20);
+		content.stroke();
+	},
+
 	fillRect: function(){
 		/*
 		* lineStyle
@@ -74,5 +125,41 @@ Demo.prototype = {
 		setTimeout(function(){
 			content.clearRect(0, 0, 50, 50);
 		},2000)
+	},
+
+	createLinearGradient: function(){
+		/*
+		* createLinearGradient
+		* addColorStop
+		*/
+		var content = this.content,
+		trunkGradient = content.createLinearGradient(0, 0, 300, 0);
+
+		trunkGradient.addColorStop(0, 'red');
+		trunkGradient.addColorStop(1, 'black');
+
+		content.fillStyle = trunkGradient;
+		content.fillRect(0, 0, 300, 300);
+		content.strokeRect(0, 0, 300, 300);
+	},
+
+	createRadialGradient: function(){
+		/*
+		* createRadialGradient
+		* addColorStop
+		*/
+		var content = this.content,
+		trunkGradient = content.createRadialGradient(150, 150, 3, 150, 150, 150);
+
+		trunkGradient.addColorStop(0, 'white');
+		trunkGradient.addColorStop(1, 'black');
+
+		content.fillStyle = trunkGradient;
+		content.fillRect(0, 0, 300, 300);
+		content.strokeRect(0, 0, 300, 300);
+	},
+
+	text: function(){
+		
 	}
 }
