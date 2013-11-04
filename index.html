@@ -6,14 +6,23 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<canvas id="canvas" width="300" height="300" class="canvas">
-	your browser do not support canvas
-	</canvas>
+	<div class="canvas_wrapper">
+		<canvas id="canvas" width="300" height="300" class="canvas">
+		your browser do not support canvas
+		</canvas>				
+	</div>
+
+
+	<ul class="btn_list" id="btn_list">
+
+	</ul>
 	<script src="js/Demo.js"></script>
+	<script src="js/Contorl.js"></script>
 	<script>
 		var canvas = document.getElementById('canvas'),
-		demo = new Demo(canvas);
-		demo.createLinearGradient();
+		demo = new Demo(canvas),
+		contorl = new Contorl(demo);
+		contorl.init();
 	</script>
 </body>
 </html>

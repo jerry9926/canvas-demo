@@ -228,6 +228,27 @@ h1,h2,h3,h4,h5,h6,strong {font-weight:bold;}
 /**************************************/
 /*            User style              */
 /**************************************/
+
+.canvas_wrapper{
+	margin: 20px auto;
+	width: 320px;
+}
+
 .canvas{
 	border: 10px #ccc solid;
+}
+
+.btn_list {
+	padding: 0 20px;
+	height: auto;
+	overflow: hidden;
+}
+
+.btn_list li {
+	margin-right: 10px;
+	float: left;
+}
+
+.btn_list .btn {
+	padding: 5px;
 }
