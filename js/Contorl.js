@@ -28,7 +28,7 @@ Contorl.prototype = {
 		for(var i=0; i < liList.length; i ++){
 			liList[i].addEventListener('click', function(e){
 				var key = this.innerText;
-				obj.setContent();
+				obj.setContext();
 				obj[key]();
 			}, false);
 		}
